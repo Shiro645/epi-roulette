@@ -9,6 +9,9 @@ Well that's **THE** moment to operate !
 ## How to operate
 1. Open a terminal
 2. Clone the repo
+```
+$ ./epi-roulette/install.sh
+```
 3. Launch the script
 Done!
 (It even delete the repo, so you'll be safe)
@@ -25,4 +28,4 @@ I am **NOT** responsible for any damage done on your friend's PCs
 Just make sure you are friend (and I hope you are still friends after this)
 
 ### How to change the Config file path
-Just modify the SHELL_PATH variable in the .env
+Just modify the CONFIG_PATH variable in the config
